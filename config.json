@@ -1,1 +1,133 @@
-{"game_id":"air-balloon","game_name":"Воздушный шар","game_type":"crash","is_active":true,"dev_seed":null,"edge":0.95,"alpha":1.2,"max_multiplier":1500,"min_crash_multiplier":1500,"multiplier_growth_rate":10,"growth_curve":1.8,"balloon_top_at":5,"balloon_max_h":0.55,"level_gap_scale":2.6,"fps":60,"delta":0.0167,"level_step":1,"idle_timeout_sec":10,"starting_balance":500,"points_per_line":10,"points_cashout_bonus":25,"points_xN_bonus":20,"themes":{"RED":{"levels":12,"line_loot_prob":[0.2,0.18,0.15,0.12,0.1,0.08,0.06,0.05,0.04,0.01,0.005,0.005]},"GREEN":{"levels":9,"line_loot_prob":[0.26,0.22,0.18,0.12,0.09,0.06,0.04,0.02,0.01]}},"booster_values":{"1":1,"2":2,"3":3,"4":4},"min_bet":1,"boosters":[1,2,3,4],"altitude":{"mid":2,"high":5,"galaxy":1000},"puzzle_rate":10,"gift_threshold":1,"gift_prizes":[{"amount":10,"weight":1000},{"amount":100,"weight":100},{"amount":1000,"weight":10},{"amount":10000,"weight":1}],"random_sounds":{"interval_sec":5,"enabled":true},"leaderboard_reward":"1:1000, 2:500, 3:250","assets":{"balloons":{"RED":"assets/balloon-red.jpg","GREEN":"assets/balloon-green.jpg"},"launchpad":null,"clouds":["assets/cloud1.png","assets/cloud2.png","assets/cloud3.png"],"birds":[],"sounds":{"theme":"assets/theme.mp3","click":null,"level":null,"boost":null,"cashout":"assets/cashout.mp3","crash":"assets/crash.mp3","flight":"assets/flight.mp3","ambient":"assets/ambient.mp3","reel":null,"jackpot":null},"icons":{"balance":"assets/icon-balance.png","points":"assets/icon-points.png","rules":"assets/icon-rules.png","reward":"assets/icon-reward.png","red":null,"green":null,"swgreen":"assets/icon-sw-green.png","swred":"assets/icon-sw-red.png","balloon":"assets/icon-balloon.png"},"fonts":{"regular":"assets/font-regular.woff2","bold":"assets/font-bold.woff2","family":null},"sfx":["assets/sfx1.mp3","assets/sfx2.mp3","assets/sfx3.mp3"],"trans":{"mid":null,"high":null,"galaxy":"assets/trans-galaxy.mp4"},"sky":{"low":null,"mid":null,"high":null,"galaxy":null},"planes":["assets/plane1.png"],"aliens":["assets/alien1.png","assets/alien2.png","assets/alien3.png","assets/alien4.png","assets/alien5.png","assets/alien6.png","assets/alien7.png","assets/alien8.png","assets/alien9.png"],"space":["assets/space1.mp3","assets/space2.mp3","assets/space3.mp3"],"satellites":[],"birdFrames":{"1":["assets/bird1_f1.png","assets/bird1_f2.png","assets/bird1_f3.png","assets/bird1_f4.png","assets/bird1_f5.png","assets/bird1_f6.png","assets/bird1_f7.png","assets/bird1_f8.png","assets/bird1_f9.png","assets/bird1_f10.png"],"2":["assets/bird2_f1.png","assets/bird2_f2.png","assets/bird2_f3.png","assets/bird2_f4.png","assets/bird2_f5.png","assets/bird2_f6.png","assets/bird2_f7.png","assets/bird2_f8.png","assets/bird2_f9.png","assets/bird2_f10.png"],"3":["assets/bird3_f1.png","assets/bird3_f2.png","assets/bird3_f3.png","assets/bird3_f4.png","assets/bird3_f5.png","assets/bird3_f6.png","assets/bird3_f7.png","assets/bird3_f8.png","assets/bird3_f9.png","assets/bird3_f10.png"]},"satFrames":{"1":["assets/satellite1_f1.png","assets/satellite1_f2.png","assets/satellite1_f3.png","assets/satellite1_f4.png","assets/satellite1_f5.png","assets/satellite1_f6.png","assets/satellite1_f7.png","assets/satellite1_f8.png","assets/satellite1_f9.png","assets/satellite1_f10.png"],"2":["assets/satellite2_f1.png","assets/satellite2_f2.png","assets/satellite2_f3.png","assets/satellite2_f4.png","assets/satellite2_f5.png","assets/satellite2_f6.png","assets/satellite2_f7.png","assets/satellite2_f8.png","assets/satellite2_f9.png","assets/satellite2_f10.png"],"3":["assets/satellite3_f1.png","assets/satellite3_f2.png","assets/satellite3_f3.png","assets/satellite3_f4.png","assets/satellite3_f5.png","assets/satellite3_f6.png","assets/satellite3_f7.png","assets/satellite3_f8.png","assets/satellite3_f9.png","assets/satellite3_f10.png"]},"boomFrames":{"1":["assets/boom1_f1.png","assets/boom1_f2.png","assets/boom1_f3.png","assets/boom1_f4.png","assets/boom1_f5.png","assets/boom1_f6.png","assets/boom1_f7.png","assets/boom1_f8.png","assets/boom1_f9.png","assets/boom1_f10.png"]},"bgTheme":"assets/bg-theme.jpg","bgBet":"assets/bg-bet.jpg","bgAuth":"assets/bg-auth.jpg","soundOn":null,"soundOff":null,"btn-primary":"assets/btn-primary.png","btn-sw-green":"assets/btn-sw-green.png","btn-sw-red":"assets/btn-sw-red.png"}}
+{
+  "game_id": "air-balloon",
+  "game_name": "Воздушный полет",
+  "game_type": "crash",
+  "is_active": true,
+  "dev_seed": null,
+  "edge": 0.95,
+  "alpha": 1.2,
+  "max_multiplier": 1000.0,
+  "min_crash_multiplier": 1.0,
+  "multiplier_growth_rate": 0.005,
+  "growth_curve": 1.8,
+  "balloon_top_at": 5.0,
+  "balloon_max_h": 0.55,
+  "level_gap_scale": 2.6,
+  "fps": 60,
+  "delta": 0.0167,
+  "level_step": 1.0,
+  "idle_timeout_sec": 10,
+  "starting_balance": 500,
+  "points_per_line": 10,
+  "points_cashout_bonus": 25,
+  "points_xN_bonus": 20,
+  "themes": {
+    "RED": {
+      "levels": 12,
+      "line_loot_prob": [
+        0.2,
+        0.18,
+        0.15,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.04,
+        0.01,
+        0.005,
+        0.005
+      ]
+    },
+    "GREEN": {
+      "levels": 9,
+      "line_loot_prob": [
+        0.26,
+        0.22,
+        0.18,
+        0.12,
+        0.09,
+        0.06,
+        0.04,
+        0.02,
+        0.01
+      ]
+    }
+  },
+  "booster_values": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4
+  },
+  "min_bet": 1,
+  "boosters": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "altitude": {
+    "mid": 2.0,
+    "high": 5.0,
+    "galaxy": 1000.0
+  },
+  "puzzle_rate": 10,
+  "gift_threshold": 100,
+  "gift_prizes": [
+    {
+      "amount": 10,
+      "weight": 1000
+    },
+    {
+      "amount": 100,
+      "weight": 100
+    },
+    {
+      "amount": 1000,
+      "weight": 10
+    },
+    {
+      "amount": 10000,
+      "weight": 1
+    }
+  ],
+  "random_sounds": {
+    "interval_sec": 5,
+    "enabled": true
+  },
+  "leaderboard_reward": "1:1000, 2:500, 3:250",
+  "assets": {
+    "balloons": {
+      "RED": null,
+      "GREEN": null
+    },
+    "launchpad": null,
+    "clouds": [],
+    "birds": [],
+    "sounds": {
+      "theme": null,
+      "click": null,
+      "level": null,
+      "boost": null,
+      "cashout": null,
+      "crash": null,
+      "flight": null,
+      "ambient": null,
+      "reel": null,
+      "jackpot": null
+    },
+    "icons": {
+      "balance": null,
+      "points": null,
+      "rules": null,
+      "reward": null
+    },
+    "fonts": {
+      "regular": null,
+      "bold": null,
+      "family": null
+    },
+    "sfx": []
+  }
+}

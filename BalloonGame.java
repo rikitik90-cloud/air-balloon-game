@@ -42,7 +42,7 @@ import java.util.concurrent.Executors;
 
 public class BalloonGame {
 
-  static final String VERSION = "2.1.15";
+  static final String VERSION = "2.1.16";
   static final int DEFAULT_PORT = 8080;
   static final Path CFG_PATH = Path.of("config.json");
   static final SecureRandom RNG = new SecureRandom();
@@ -58,7 +58,7 @@ public class BalloonGame {
   static final Path USERS_PATH = Path.of("users.json");
   static final Path LEADERS_PATH = Path.of("leaders.json");
 
-  static final String DEFAULT_CFG = "{\"game_id\":\"air-balloon\",\"game_name\":\"Воздушный полет\",\"game_type\":\"crash\",\"is_active\":true,\"dev_seed\":null,\"edge\":0.95,\"alpha\":1.2,\"max_multiplier\":1000.0,\"min_crash_multiplier\":1.0,\"multiplier_growth_rate\":0.005,\"growth_curve\":1.8,\"balloon_top_at\":5.0,\"balloon_max_h\":0.55,\"level_gap_scale\":2.6,\"fps\":60,\"delta\":0.0167,\"level_step\":1.0,\"idle_timeout_sec\":10,\"starting_balance\":500,\"points_per_line\":10,\"points_cashout_bonus\":25,\"points_xN_bonus\":20,\"themes\":{\"RED\":{\"levels\":12,\"line_loot_prob\":[0.20,0.18,0.15,0.12,0.10,0.08,0.06,0.05,0.04,0.01,0.005,0.005]},\"GREEN\":{\"levels\":9,\"line_loot_prob\":[0.26,0.22,0.18,0.12,0.09,0.06,0.04,0.02,0.01]}},\"booster_values\":{\"1\":1,\"2\":2,\"3\":3,\"4\":4},\"min_bet\":1,\"boosters\":[1,2,3,4],\"altitude\":{\"mid\":2.0,\"high\":5.0,\"galaxy\":1000.0},\"puzzle_rate\":10,\"gift_threshold\":100,\"gift_prizes\":[{\"amount\":10,\"weight\":1000},{\"amount\":100,\"weight\":100},{\"amount\":1000,\"weight\":10},{\"amount\":10000,\"weight\":1}],\"random_sounds\":{\"interval_sec\":5,\"enabled\":true},\"leaderboard_reward\":\"1:1000, 2:500, 3:250\",\"assets\":{\"balloons\":{\"RED\":null,\"GREEN\":null},\"launchpad\":null,\"clouds\":[],\"birds\":[],\"sounds\":{\"theme\":null,\"click\":null,\"level\":null,\"boost\":null,\"cashout\":null,\"crash\":null,\"flight\":null,\"ambient\":null,\"reel\":null,\"jackpot\":null},\"icons\":{\"balance\":null,\"points\":null,\"rules\":null,\"reward\":null},\"fonts\":{\"regular\":null,\"bold\":null,\"family\":null},\"sfx\":[]}}}";
+  static final String DEFAULT_CFG = "{\"game_id\":\"air-balloon\",\"game_name\":\"Воздушный полет\",\"game_type\":\"crash\",\"is_active\":true,\"dev_seed\":null,\"edge\":0.95,\"alpha\":1.2,\"max_multiplier\":1000.0,\"min_crash_multiplier\":1.0,\"multiplier_growth_rate\":0.005,\"growth_curve\":1.8,\"balloon_top_at\":5.0,\"balloon_max_h\":0.55,\"level_gap_scale\":2.6,\"fps\":60,\"delta\":0.0167,\"level_step\":1.0,\"idle_timeout_sec\":10,\"starting_balance\":500,\"points_per_line\":10,\"points_cashout_bonus\":25,\"points_xN_bonus\":20,\"themes\":{\"RED\":{\"levels\":12,\"line_loot_prob\":[0.20,0.18,0.15,0.12,0.10,0.08,0.06,0.05,0.04,0.01,0.005,0.005]},\"GREEN\":{\"levels\":9,\"line_loot_prob\":[0.26,0.22,0.18,0.12,0.09,0.06,0.04,0.02,0.01]}},\"booster_values\":{\"1\":1,\"2\":2,\"3\":3,\"4\":4},\"min_bet\":1,\"boosters\":[1,2,3,4],\"altitude\":{\"mid\":2.0,\"high\":5.0,\"galaxy\":1000.0},\"puzzle_rate\":10,\"gift_threshold\":100,\"gift_prizes\":[{\"amount\":10,\"weight\":1000},{\"amount\":100,\"weight\":100},{\"amount\":1000,\"weight\":10},{\"amount\":10000,\"weight\":1}],\"random_sounds\":{\"interval_sec\":5,\"enabled\":true},\"leaderboard_reward\":\"1:1000, 2:500, 3:250\",\"assets\":{\"balloons\":{\"RED\":null,\"GREEN\":null},\"launchpad\":null,\"clouds\":[],\"birds\":[],\"sounds\":{\"theme\":null,\"click\":null,\"level\":null,\"boost\":null,\"cashout\":null,\"crash\":null,\"flight\":null,\"ambient\":null,\"reel\":null,\"jackpot\":null},\"icons\":{\"balance\":null,\"points\":null,\"rules\":null,\"reward\":null},\"fonts\":{\"regular\":null,\"bold\":null,\"family\":null},\"sfx\":[]}}";
 
   static final String EMBEDDED_INDEX = """
 <!doctype html>
@@ -1263,39 +1263,9 @@ boot();
     out.put("sfx", pickNumbered(files, "sfx"));
     out.put("space", pickNumbered(files, "space"));
     out.put("satellites", pickNumbered(files, "satellite"));
-    Map<String, Object> birdFrames = new LinkedHashMap<>();
-    for (int b = 1; b <= 5; b++) {
-      List<Object> frames = new ArrayList<>();
-      for (int f = 1; f <= 20; f++) {
-        String p = files.get("bird" + b + "_f" + f);
-        if (p == null) break;
-        frames.add(p);
-      }
-      if (!frames.isEmpty()) birdFrames.put(String.valueOf(b), frames);
-    }
-    out.put("birdFrames", birdFrames);
-    Map<String, Object> satFrames = new LinkedHashMap<>();
-    for (int b = 1; b <= 5; b++) {
-      List<Object> frames = new ArrayList<>();
-      for (int f = 1; f <= 20; f++) {
-        String p = files.get("satellite" + b + "_f" + f);
-        if (p == null) break;
-        frames.add(p);
-      }
-      if (!frames.isEmpty()) satFrames.put(String.valueOf(b), frames);
-    }
-    out.put("satFrames", satFrames);
-    Map<String, Object> boomFrames = new LinkedHashMap<>();
-    for (int b = 1; b <= 5; b++) {
-      List<Object> frames = new ArrayList<>();
-      for (int f = 1; f <= 20; f++) {
-        String p = files.get("boom" + b + "_f" + f);
-        if (p == null) break;
-        frames.add(p);
-      }
-      if (!frames.isEmpty()) boomFrames.put(String.valueOf(b), frames);
-    }
-    out.put("boomFrames", boomFrames);
+    out.put("birdFrames", collectFrames(files, "bird"));
+    out.put("satFrames", collectFrames(files, "satellite"));
+    out.put("boomFrames", collectFrames(files, "boom"));
     out.put("bgTheme", files.get("bg-theme"));
     out.put("bgBet", files.get("bg-bet"));
     out.put("bgAuth", files.get("bg-auth"));
@@ -1303,6 +1273,21 @@ boot();
     out.put("soundOff", files.get("sound-off"));
     for (Map.Entry<String, String> e : files.entrySet())
       if (e.getKey().startsWith("btn-")) out.put(e.getKey(), e.getValue());
+    return out;
+  }
+
+  /** Кадры вида <kind><set>_f<номер> с любыми номерами (f01, f001, пропуски), сортировка по номеру кадра. */
+  static Map<String, Object> collectFrames(Map<String, String> files, String kind) {
+    Map<String, TreeMap<Integer, String>> sets = new TreeMap<>();
+    java.util.regex.Pattern pat = java.util.regex.Pattern.compile("^" + kind + "(\\d+)_f(\\d+)$");
+    for (Map.Entry<String, String> e : files.entrySet()) {
+      java.util.regex.Matcher m = pat.matcher(e.getKey());
+      if (m.matches())
+        sets.computeIfAbsent(m.group(1), k -> new TreeMap<>()).put(Integer.parseInt(m.group(2)), e.getValue());
+    }
+    Map<String, Object> out = new LinkedHashMap<>();
+    for (Map.Entry<String, TreeMap<Integer, String>> s : sets.entrySet())
+      out.put(s.getKey(), new ArrayList<Object>(s.getValue().values()));
     return out;
   }
 
