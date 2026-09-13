@@ -1,0 +1,133 @@
+{
+  "game_id": "air-balloon",
+  "game_name": "Воздушный полет",
+  "game_type": "crash",
+  "is_active": true,
+  "dev_seed": null,
+  "edge": 0.95,
+  "alpha": 1.2,
+  "max_multiplier": 1000.0,
+  "min_crash_multiplier": 1.0,
+  "multiplier_growth_rate": 0.005,
+  "growth_curve": 1.8,
+  "balloon_top_at": 5.0,
+  "balloon_max_h": 0.55,
+  "level_gap_scale": 2.6,
+  "fps": 60,
+  "delta": 0.0167,
+  "level_step": 1.0,
+  "idle_timeout_sec": 10,
+  "starting_balance": 500,
+  "points_per_line": 10,
+  "points_cashout_bonus": 25,
+  "points_xN_bonus": 20,
+  "themes": {
+    "RED": {
+      "levels": 12,
+      "line_loot_prob": [
+        0.2,
+        0.18,
+        0.15,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.04,
+        0.01,
+        0.005,
+        0.005
+      ]
+    },
+    "GREEN": {
+      "levels": 9,
+      "line_loot_prob": [
+        0.26,
+        0.22,
+        0.18,
+        0.12,
+        0.09,
+        0.06,
+        0.04,
+        0.02,
+        0.01
+      ]
+    }
+  },
+  "booster_values": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4
+  },
+  "min_bet": 1,
+  "boosters": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "altitude": {
+    "mid": 2.0,
+    "high": 5.0,
+    "galaxy": 1000.0
+  },
+  "puzzle_rate": 10,
+  "gift_threshold": 100,
+  "gift_prizes": [
+    {
+      "amount": 10,
+      "weight": 1000
+    },
+    {
+      "amount": 100,
+      "weight": 100
+    },
+    {
+      "amount": 1000,
+      "weight": 10
+    },
+    {
+      "amount": 10000,
+      "weight": 1
+    }
+  ],
+  "random_sounds": {
+    "interval_sec": 5,
+    "enabled": true
+  },
+  "leaderboard_reward": "1:1000, 2:500, 3:250",
+  "assets": {
+    "balloons": {
+      "RED": null,
+      "GREEN": null
+    },
+    "launchpad": null,
+    "clouds": [],
+    "birds": [],
+    "sounds": {
+      "theme": null,
+      "click": null,
+      "level": null,
+      "boost": null,
+      "cashout": null,
+      "crash": null,
+      "flight": null,
+      "ambient": null,
+      "reel": null,
+      "jackpot": null
+    },
+    "icons": {
+      "balance": null,
+      "points": null,
+      "rules": null,
+      "reward": null
+    },
+    "fonts": {
+      "regular": null,
+      "bold": null,
+      "family": null
+    },
+    "sfx": []
+  }
+}

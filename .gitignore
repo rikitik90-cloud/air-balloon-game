@@ -3,4 +3,4 @@
 users.json
 leaders.json
 *.log
-target/config.json
+target
