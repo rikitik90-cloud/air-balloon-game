@@ -1,0 +1,7 @@
+.git
+.vscode
+users.json
+config.json
+leaders.json
+*.log
+target/
